@@ -20,7 +20,7 @@ jobs:
   terraform_init_and_plan:
   
     name: Terraform init and plan
-    runs-on: tondu
+    runs-on: [self-hosted, tondu]
     
     steps:
       - name: Checkout
