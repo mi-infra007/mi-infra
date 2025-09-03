@@ -5,6 +5,13 @@ terraform {
       version = ">=4.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name   = "achinta-dev"
+    storage_account_name  = "terrastorage1"
+    container_name        = "terra-remote"
+    key                   = "mi.tfstate"
+    
+  }
 }
 
 provider "azurerm" {
@@ -18,3 +25,4 @@ resource "azurerm_resource_group" "testRG_Achinta" {
   name     = "achinta2025"
   location = "West Europe"
 }
+
