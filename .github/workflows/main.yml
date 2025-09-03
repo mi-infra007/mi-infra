@@ -1,0 +1,42 @@
+name: terraform
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
+  #     - 'feature/**'
+  # pull_request:
+  #   branches:
+  #     - 'feature/**'
+  # schedule:
+  #   - cron: '05 8 * * *'
+
+# permissions:
+#   id-token: write
+#   contents: read
+      
+jobs:
+  terraform_init_and_plan:
+  
+    name: Terraform init and plan
+    runs-on: tondu
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+
+      - name: Azure Login
+        uses: Azure/login@v2.3.0
+        with: 
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+     
+  
+                
+      
+            
+ 
+          
